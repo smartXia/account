@@ -40,5 +40,7 @@
         <table tableName="login_sessions"></table>
         <table tableName="phone_captchas"></table>
         <table tableName="session_group" ></table>
+        <table tableName="user" ></table>
+
     </context>
 </generatorConfiguration>

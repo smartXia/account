@@ -1,8 +1,8 @@
 package com.org.account.services.impl;
 
 import com.org.account.mapper.AccountsMapper;
-import com.org.account.model.Accounts;
-import com.org.account.model.AccountsExample;
+import com.org.account.po.Accounts;
+import com.org.account.po.AccountsExample;
 import com.org.account.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,6 @@ import java.util.List;
 public class AccountImpl implements AccountService {
     @Autowired
     AccountsMapper accountsMapper;
-
     @Override
     public List<Accounts> accountList() {
         AccountsExample example = new AccountsExample();

@@ -1,7 +1,7 @@
 package com.org.account.mapper;
 
-import com.org.account.model.EmailCaptcha;
-import com.org.account.model.EmailCaptchaExample;
+import com.org.account.po.EmailCaptcha;
+import com.org.account.po.EmailCaptchaExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 package com.org.account.mapper;
 
-import com.org.account.model.PhoneCaptchas;
-import com.org.account.model.PhoneCaptchasExample;
+import com.org.account.po.PhoneCaptchas;
+import com.org.account.po.PhoneCaptchasExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

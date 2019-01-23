@@ -1,7 +1,7 @@
 package com.org.account.mapper;
 
-import com.org.account.model.LoginSessions;
-import com.org.account.model.LoginSessionsExample;
+import com.org.account.po.LoginSessions;
+import com.org.account.po.LoginSessionsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

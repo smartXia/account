@@ -1,7 +1,7 @@
 package com.org.account.mapper;
 
-import com.org.account.model.DebugLogs;
-import com.org.account.model.DebugLogsExample;
+import com.org.account.po.DebugLogs;
+import com.org.account.po.DebugLogsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,7 +1,7 @@
 package com.org.account.mapper;
 
-import com.org.account.model.AppParam;
-import com.org.account.model.AppParamExample;
+import com.org.account.po.AppParam;
+import com.org.account.po.AppParamExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

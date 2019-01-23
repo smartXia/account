@@ -1,7 +1,7 @@
 package com.org.account.mapper;
 
-import com.org.account.model.SessionGroup;
-import com.org.account.model.SessionGroupExample;
+import com.org.account.po.SessionGroup;
+import com.org.account.po.SessionGroupExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

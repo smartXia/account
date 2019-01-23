@@ -1,6 +1,7 @@
 package com.org.account.services;
 
-import com.org.account.model.Accounts;
+
+import com.org.account.po.Accounts;
 
 import java.util.List;
 

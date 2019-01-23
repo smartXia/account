@@ -1,7 +1,7 @@
 package com.org.account.mapper;
 
-import com.org.account.model.Accounts;
-import com.org.account.model.AccountsExample;
+import com.org.account.po.Accounts;
+import com.org.account.po.AccountsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 

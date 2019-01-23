@@ -3,6 +3,6 @@ spring:
     active: dev
 mybatis:
   configuration:
-   map-underscore-to-camel-case: true
-  mapper-locations: mybatis/**/*Mapper.xml
+    map-underscore-to-camel-case: true
+  mapper-locations: mapping/*.xml
   typeAliasesPackage: com.org.account.po
