@@ -4,6 +4,8 @@ import com.github.pagehelper.PageHelper;
 import com.org.account.mapper.UserMapper;
 import com.org.account.po.User;
 import com.org.account.services.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,13 +16,14 @@ import java.util.List;
  */
 @Service(value = "userService")
 public class UserServiceImpl implements UserService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserMapper userMapper;//这里会报错，但是并不会影响
 
     @Override
     public int addUser(User user) {
-
+        LOGGER.info("新增用户：" + user.toString());
         return userMapper.insertSelective(user);
     }
 

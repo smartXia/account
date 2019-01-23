@@ -1,14 +1,28 @@
 package com.org.account.po;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.DecimalMin;
 import java.util.Date;
 
+/**
+ * 用户实体类
+ * <p>
+ * Created by bysocket on 21/07/2017.
+ */
 public class User {
+
     private Integer id;
 
+    @NotBlank(message = "name 不允许为空")
+    @Length(min = 2, max = 10, message = "name 长度必须在 {min} - {max} 之间")
     private String name;
 
+    @NotNull(message = "age 不允许为空")
+    @DecimalMin(value = "0", message = "年龄能低于 {0}")
     private Integer age;
-
+    @NotBlank(message = "birthday 不允许为空")
     private String birthday;
 
     private Date createdAt;
@@ -62,4 +76,5 @@ public class User {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
 }
