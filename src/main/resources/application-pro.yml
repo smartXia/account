@@ -1,0 +1,10 @@
+logging:
+  level:
+    root: error
+    com.bd: info
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mydemo?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123

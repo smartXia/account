@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.org.account.mapper.AccountBindsMapper" >
+  <resultMap id="BaseResultMap" type="com.org.account.model.AccountBinds" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+    <result column="channel" property="channel" jdbcType="INTEGER" />
+    <result column="account_id" property="accountId" jdbcType="VARCHAR" />
+    <result column="account_type" property="accountType" jdbcType="VARCHAR" />
+    <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+    <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, appkey, channel, account_id, account_type, openid, nickname, created_at, updated_at
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from account_binds
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from account_binds
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.org.account.model.AccountBinds" >
+    insert into account_binds (id, appkey, channel, 
+      account_id, account_type, openid, 
+      nickname, created_at, updated_at
+      )
+    values (#{id,jdbcType=INTEGER}, #{appkey,jdbcType=VARCHAR}, #{channel,jdbcType=INTEGER}, 
+      #{accountId,jdbcType=VARCHAR}, #{accountType,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.org.account.model.AccountBinds" >
+    insert into account_binds
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+      <if test="channel != null" >
+        channel,
+      </if>
+      <if test="accountId != null" >
+        account_id,
+      </if>
+      <if test="accountType != null" >
+        account_type,
+      </if>
+      <if test="openid != null" >
+        openid,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="createdAt != null" >
+        created_at,
+      </if>
+      <if test="updatedAt != null" >
+        updated_at,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null" >
+        #{channel,jdbcType=INTEGER},
+      </if>
+      <if test="accountId != null" >
+        #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="accountType != null" >
+        #{accountType,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null" >
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null" >
+        #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.org.account.model.AccountBinds" >
+    update account_binds
+    <set >
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null" >
+        channel = #{channel,jdbcType=INTEGER},
+      </if>
+      <if test="accountId != null" >
+        account_id = #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="accountType != null" >
+        account_type = #{accountType,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null" >
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null" >
+        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.org.account.model.AccountBinds" >
+    update account_binds
+    set appkey = #{appkey,jdbcType=VARCHAR},
+      channel = #{channel,jdbcType=INTEGER},
+      account_id = #{accountId,jdbcType=VARCHAR},
+      account_type = #{accountType,jdbcType=VARCHAR},
+      openid = #{openid,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

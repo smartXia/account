@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.org.account.mapper.LoginSessionsMapper" >
+  <resultMap id="BaseResultMap" type="com.org.account.model.LoginSessions" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="account_id" property="accountId" jdbcType="VARCHAR" />
+    <result column="selector" property="selector" jdbcType="VARCHAR" />
+    <result column="identifier" property="identifier" jdbcType="VARCHAR" />
+    <result column="platform" property="platform" jdbcType="VARCHAR" />
+    <result column="expired_at" property="expiredAt" jdbcType="VARCHAR" />
+    <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
+    <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
+    <result column="appkey" property="appkey" jdbcType="VARCHAR" />
+    <result column="channel" property="channel" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.org.account.model.LoginSessions" extends="BaseResultMap" >
+    <result column="token" property="token" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, account_id, selector, identifier, platform, expired_at, created_at, updated_at, 
+    appkey, channel
+  </sql>
+  <sql id="Blob_Column_List" >
+    token
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from login_sessions
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from login_sessions
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.org.account.model.LoginSessions" >
+    insert into login_sessions (id, account_id, selector, 
+      identifier, platform, expired_at, 
+      created_at, updated_at, appkey, 
+      channel, token)
+    values (#{id,jdbcType=INTEGER}, #{accountId,jdbcType=VARCHAR}, #{selector,jdbcType=VARCHAR}, 
+      #{identifier,jdbcType=VARCHAR}, #{platform,jdbcType=VARCHAR}, #{expiredAt,jdbcType=VARCHAR}, 
+      #{createdAt,jdbcType=TIMESTAMP}, #{updatedAt,jdbcType=TIMESTAMP}, #{appkey,jdbcType=VARCHAR}, 
+      #{channel,jdbcType=INTEGER}, #{token,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.org.account.model.LoginSessions" >
+    insert into login_sessions
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="accountId != null" >
+        account_id,
+      </if>
+      <if test="selector != null" >
+        selector,
+      </if>
+      <if test="identifier != null" >
+        identifier,
+      </if>
+      <if test="platform != null" >
+        platform,
+      </if>
+      <if test="expiredAt != null" >
+        expired_at,
+      </if>
+      <if test="createdAt != null" >
+        created_at,
+      </if>
+      <if test="updatedAt != null" >
+        updated_at,
+      </if>
+      <if test="appkey != null" >
+        appkey,
+      </if>
+      <if test="channel != null" >
+        channel,
+      </if>
+      <if test="token != null" >
+        token,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="accountId != null" >
+        #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="selector != null" >
+        #{selector,jdbcType=VARCHAR},
+      </if>
+      <if test="identifier != null" >
+        #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null" >
+        #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="expiredAt != null" >
+        #{expiredAt,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null" >
+        #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null" >
+        #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appkey != null" >
+        #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null" >
+        #{channel,jdbcType=INTEGER},
+      </if>
+      <if test="token != null" >
+        #{token,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.org.account.model.LoginSessions" >
+    update login_sessions
+    <set >
+      <if test="accountId != null" >
+        account_id = #{accountId,jdbcType=VARCHAR},
+      </if>
+      <if test="selector != null" >
+        selector = #{selector,jdbcType=VARCHAR},
+      </if>
+      <if test="identifier != null" >
+        identifier = #{identifier,jdbcType=VARCHAR},
+      </if>
+      <if test="platform != null" >
+        platform = #{platform,jdbcType=VARCHAR},
+      </if>
+      <if test="expiredAt != null" >
+        expired_at = #{expiredAt,jdbcType=VARCHAR},
+      </if>
+      <if test="createdAt != null" >
+        created_at = #{createdAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedAt != null" >
+        updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="appkey != null" >
+        appkey = #{appkey,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null" >
+        channel = #{channel,jdbcType=INTEGER},
+      </if>
+      <if test="token != null" >
+        token = #{token,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.org.account.model.LoginSessions" >
+    update login_sessions
+    set account_id = #{accountId,jdbcType=VARCHAR},
+      selector = #{selector,jdbcType=VARCHAR},
+      identifier = #{identifier,jdbcType=VARCHAR},
+      platform = #{platform,jdbcType=VARCHAR},
+      expired_at = #{expiredAt,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      appkey = #{appkey,jdbcType=VARCHAR},
+      channel = #{channel,jdbcType=INTEGER},
+      token = #{token,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.org.account.model.LoginSessions" >
+    update login_sessions
+    set account_id = #{accountId,jdbcType=VARCHAR},
+      selector = #{selector,jdbcType=VARCHAR},
+      identifier = #{identifier,jdbcType=VARCHAR},
+      platform = #{platform,jdbcType=VARCHAR},
+      expired_at = #{expiredAt,jdbcType=VARCHAR},
+      created_at = #{createdAt,jdbcType=TIMESTAMP},
+      updated_at = #{updatedAt,jdbcType=TIMESTAMP},
+      appkey = #{appkey,jdbcType=VARCHAR},
+      channel = #{channel,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
