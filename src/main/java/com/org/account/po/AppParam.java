@@ -1,21 +1,19 @@
-package com.org.account.model;
+package com.org.account.po;
 
 import java.util.Date;
 
-public class PhoneCaptcha {
+public class AppParam {
     private Integer id;
 
     private String appkey;
 
     private Integer channel;
 
-    private String phone;
-
-    private String captcha;
-
     private Date createdAt;
 
     private Date updatedAt;
+
+    private String settings;
 
     public Integer getId() {
         return id;
@@ -41,22 +39,6 @@ public class PhoneCaptcha {
         this.channel = channel;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone == null ? null : phone.trim();
-    }
-
-    public String getCaptcha() {
-        return captcha;
-    }
-
-    public void setCaptcha(String captcha) {
-        this.captcha = captcha == null ? null : captcha.trim();
-    }
-
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -71,5 +53,13 @@ public class PhoneCaptcha {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getSettings() {
+        return settings;
+    }
+
+    public void setSettings(String settings) {
+        this.settings = settings == null ? null : settings.trim();
     }
 }

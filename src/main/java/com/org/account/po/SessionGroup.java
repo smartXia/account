@@ -1,17 +1,17 @@
-package com.org.account.model;
+package com.org.account.po;
 
 import java.util.Date;
 
-public class AppAccounts {
+public class SessionGroup {
     private Integer id;
 
     private String appkey;
 
     private Integer channel;
 
-    private String accountId;
+    private String groupIdentity;
 
-    private String openid;
+    private String relatedSessionIds;
 
     private Date createdAt;
 
@@ -41,20 +41,20 @@ public class AppAccounts {
         this.channel = channel;
     }
 
-    public String getAccountId() {
-        return accountId;
+    public String getGroupIdentity() {
+        return groupIdentity;
     }
 
-    public void setAccountId(String accountId) {
-        this.accountId = accountId == null ? null : accountId.trim();
+    public void setGroupIdentity(String groupIdentity) {
+        this.groupIdentity = groupIdentity == null ? null : groupIdentity.trim();
     }
 
-    public String getOpenid() {
-        return openid;
+    public String getRelatedSessionIds() {
+        return relatedSessionIds;
     }
 
-    public void setOpenid(String openid) {
-        this.openid = openid == null ? null : openid.trim();
+    public void setRelatedSessionIds(String relatedSessionIds) {
+        this.relatedSessionIds = relatedSessionIds == null ? null : relatedSessionIds.trim();
     }
 
     public Date getCreatedAt() {

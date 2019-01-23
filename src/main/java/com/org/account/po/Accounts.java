@@ -1,17 +1,23 @@
-package com.org.account.model;
+package com.org.account.po;
 
 import java.util.Date;
 
-public class EmailCaptcha {
+public class Accounts {
     private Integer id;
 
     private String appkey;
 
     private Integer channel;
 
+    private String openid;
+
+    private String phone;
+
     private String email;
 
-    private String captcha;
+    private String password;
+
+    private String deviceid;
 
     private Date createdAt;
 
@@ -41,6 +47,22 @@ public class EmailCaptcha {
         this.channel = channel;
     }
 
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid == null ? null : openid.trim();
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
+    }
+
     public String getEmail() {
         return email;
     }
@@ -49,12 +71,20 @@ public class EmailCaptcha {
         this.email = email == null ? null : email.trim();
     }
 
-    public String getCaptcha() {
-        return captcha;
+    public String getPassword() {
+        return password;
     }
 
-    public void setCaptcha(String captcha) {
-        this.captcha = captcha == null ? null : captcha.trim();
+    public void setPassword(String password) {
+        this.password = password == null ? null : password.trim();
+    }
+
+    public String getDeviceid() {
+        return deviceid;
+    }
+
+    public void setDeviceid(String deviceid) {
+        this.deviceid = deviceid == null ? null : deviceid.trim();
     }
 
     public Date getCreatedAt() {

@@ -1,19 +1,21 @@
-package com.org.account.model;
+package com.org.account.po;
 
 import java.util.Date;
 
-public class AppParam {
+public class AppAccounts {
     private Integer id;
 
     private String appkey;
 
     private Integer channel;
 
+    private String accountId;
+
+    private String openid;
+
     private Date createdAt;
 
     private Date updatedAt;
-
-    private String settings;
 
     public Integer getId() {
         return id;
@@ -39,6 +41,22 @@ public class AppParam {
         this.channel = channel;
     }
 
+    public String getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId == null ? null : accountId.trim();
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid == null ? null : openid.trim();
+    }
+
     public Date getCreatedAt() {
         return createdAt;
     }
@@ -53,13 +71,5 @@ public class AppParam {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
-    }
-
-    public String getSettings() {
-        return settings;
-    }
-
-    public void setSettings(String settings) {
-        this.settings = settings == null ? null : settings.trim();
     }
 }

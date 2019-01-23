@@ -1,17 +1,21 @@
-package com.org.account.model;
+package com.org.account.po;
 
 import java.util.Date;
 
-public class SessionGroup {
+public class AccountBinds {
     private Integer id;
 
     private String appkey;
 
     private Integer channel;
 
-    private String groupIdentity;
+    private String accountId;
 
-    private String relatedSessionIds;
+    private String accountType;
+
+    private String openid;
+
+    private String nickname;
 
     private Date createdAt;
 
@@ -41,20 +45,36 @@ public class SessionGroup {
         this.channel = channel;
     }
 
-    public String getGroupIdentity() {
-        return groupIdentity;
+    public String getAccountId() {
+        return accountId;
     }
 
-    public void setGroupIdentity(String groupIdentity) {
-        this.groupIdentity = groupIdentity == null ? null : groupIdentity.trim();
+    public void setAccountId(String accountId) {
+        this.accountId = accountId == null ? null : accountId.trim();
     }
 
-    public String getRelatedSessionIds() {
-        return relatedSessionIds;
+    public String getAccountType() {
+        return accountType;
     }
 
-    public void setRelatedSessionIds(String relatedSessionIds) {
-        this.relatedSessionIds = relatedSessionIds == null ? null : relatedSessionIds.trim();
+    public void setAccountType(String accountType) {
+        this.accountType = accountType == null ? null : accountType.trim();
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid == null ? null : openid.trim();
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname == null ? null : nickname.trim();
     }
 
     public Date getCreatedAt() {

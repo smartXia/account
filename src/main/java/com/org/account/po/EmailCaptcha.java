@@ -1,21 +1,17 @@
-package com.org.account.model;
+package com.org.account.po;
 
 import java.util.Date;
 
-public class AccountBinds {
+public class EmailCaptcha {
     private Integer id;
 
     private String appkey;
 
     private Integer channel;
 
-    private String accountId;
+    private String email;
 
-    private String accountType;
-
-    private String openid;
-
-    private String nickname;
+    private String captcha;
 
     private Date createdAt;
 
@@ -45,36 +41,20 @@ public class AccountBinds {
         this.channel = channel;
     }
 
-    public String getAccountId() {
-        return accountId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAccountId(String accountId) {
-        this.accountId = accountId == null ? null : accountId.trim();
+    public void setEmail(String email) {
+        this.email = email == null ? null : email.trim();
     }
 
-    public String getAccountType() {
-        return accountType;
+    public String getCaptcha() {
+        return captcha;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType == null ? null : accountType.trim();
-    }
-
-    public String getOpenid() {
-        return openid;
-    }
-
-    public void setOpenid(String openid) {
-        this.openid = openid == null ? null : openid.trim();
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname == null ? null : nickname.trim();
+    public void setCaptcha(String captcha) {
+        this.captcha = captcha == null ? null : captcha.trim();
     }
 
     public Date getCreatedAt() {

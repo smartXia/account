@@ -1,4 +1,4 @@
-package com.org.account.model;
+package com.org.account.po;
 
 import java.util.Date;
 
