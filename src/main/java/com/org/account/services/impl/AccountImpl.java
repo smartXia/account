@@ -13,9 +13,13 @@ import java.util.List;
 public class AccountImpl implements AccountService {
     @Autowired
     AccountsMapper accountsMapper;
+
     @Override
-    public List<Accounts> accountList() {
+    public List<Accounts> accountList(Accounts accounts) {
+        //传过来的是account对象包含值
         AccountsExample example = new AccountsExample();
+        System.out.print(example);
+
         return accountsMapper.selectByExample(example);
     }
 

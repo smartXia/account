@@ -16,6 +16,7 @@ public interface AccountService {
     int updateAccount(Accounts accounts);
 
     //account用户列表
-    List<Accounts> accountList();
+    List<Accounts> accountList(Accounts accounts);
 
-}
+
+ }

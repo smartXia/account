@@ -5,6 +5,8 @@ package com.org.account.util;
  * Created by wzh-zhua on 2018/10/1.
  */
 public class Result<T> {
+    /** 状态**/
+    private  Integer ret;
     /** 错误码. */
     private Integer code;
 
@@ -38,4 +40,11 @@ public class Result<T> {
         this.data = data;
     }
 
+    public Integer getRet() {
+        return ret;
+    }
+
+    public void setRet(Integer ret) {
+        this.ret = ret;
+    }
 }

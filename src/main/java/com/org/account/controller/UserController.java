@@ -33,9 +33,9 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value = "/add", produces = {"application/json;charset=UTF-8"})
     public Result addUser(@Validated User user, BindingResult bindingResult) {
-        LOGGER.info("新增用户：" + user.getName());
+        LOGGER.info("新增用户：" + user.toString());
         if (bindingResult.hasErrors()) {
-            return ResultUtil.error(-1, bindingResult.getFieldError().getDefaultMessage());
+            return ResultUtil.error(-1, -1, bindingResult.getFieldError().getDefaultMessage());
         }
         return ResultUtil.success(userService.addUser(user));
     }

@@ -72,4 +72,17 @@ public class AppAccounts {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    @Override
+    public String toString() {
+        return "AppAccounts{" +
+                "id=" + id +
+                ", appkey='" + appkey + '\'' +
+                ", channel=" + channel +
+                ", accountId='" + accountId + '\'' +
+                ", openid='" + openid + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

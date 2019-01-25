@@ -72,4 +72,17 @@ public class PhoneCaptchas {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    @Override
+    public String toString() {
+        return "PhoneCaptchas{" +
+                "id=" + id +
+                ", appkey='" + appkey + '\'' +
+                ", channel=" + channel +
+                ", phone='" + phone + '\'' +
+                ", captcha='" + captcha + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

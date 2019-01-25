@@ -112,4 +112,21 @@ public class LoginSessions {
     public void setToken(String token) {
         this.token = token == null ? null : token.trim();
     }
+
+    @Override
+    public String toString() {
+        return "LoginSessions{" +
+                "id=" + id +
+                ", accountId='" + accountId + '\'' +
+                ", selector='" + selector + '\'' +
+                ", identifier='" + identifier + '\'' +
+                ", platform='" + platform + '\'' +
+                ", expiredAt='" + expiredAt + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", appkey='" + appkey + '\'' +
+                ", channel=" + channel +
+                ", token='" + token + '\'' +
+                '}';
+    }
 }

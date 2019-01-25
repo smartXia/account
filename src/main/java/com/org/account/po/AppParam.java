@@ -62,4 +62,16 @@ public class AppParam {
     public void setSettings(String settings) {
         this.settings = settings == null ? null : settings.trim();
     }
+
+    @Override
+    public String toString() {
+        return "AppParam{" +
+                "id=" + id +
+                ", appkey='" + appkey + '\'' +
+                ", channel=" + channel +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", settings='" + settings + '\'' +
+                '}';
+    }
 }

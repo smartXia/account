@@ -4,6 +4,7 @@ import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 /**
@@ -23,6 +24,7 @@ public class User {
     @DecimalMin(value = "0", message = "年龄能低于 {0}")
     private Integer age;
     @NotBlank(message = "birthday 不允许为空")
+    @Pattern(regexp="^[0-9]{4}-[0-9]{2}-[0-9]{2}$",message="出生日期格式不正确")
     private String birthday;
 
     private Date createdAt;
@@ -77,4 +79,15 @@ public class User {
         this.updatedAt = updatedAt;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", birthday='" + birthday + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

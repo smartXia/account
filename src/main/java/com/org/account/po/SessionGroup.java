@@ -72,4 +72,17 @@ public class SessionGroup {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    @Override
+    public String toString() {
+        return "SessionGroup{" +
+                "id=" + id +
+                ", appkey='" + appkey + '\'' +
+                ", channel=" + channel +
+                ", groupIdentity='" + groupIdentity + '\'' +
+                ", relatedSessionIds='" + relatedSessionIds + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

@@ -72,4 +72,17 @@ public class EmailCaptcha {
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
+
+    @Override
+    public String toString() {
+        return "EmailCaptcha{" +
+                "id=" + id +
+                ", appkey='" + appkey + '\'' +
+                ", channel=" + channel +
+                ", email='" + email + '\'' +
+                ", captcha='" + captcha + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
+    }
 }

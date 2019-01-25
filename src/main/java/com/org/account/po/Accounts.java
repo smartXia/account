@@ -1,20 +1,32 @@
 package com.org.account.po;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 public class Accounts {
     private Integer id;
 
+    @NotBlank(message = "appkey 不允许为空")
     private String appkey;
 
+    @NotNull(message = "channel 不允许为空")
     private Integer channel;
 
     private String openid;
 
+    @NotBlank(message = "phone 不允许为空")
+    @Pattern(regexp = "^1[34578]\\d{9}", message = "phone格式错误")
     private String phone;
-
+    @Email(message = "请输入正确的邮箱")
     private String email;
-
+    @NotBlank(message = "password 不允许为空")
+    @Length(min = 6, message = "密码长度不能小于6位")
     private String password;
 
     private String deviceid;
@@ -101,5 +113,21 @@ public class Accounts {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public String toString() {
+        return "Accounts{" +
+                "id=" + id +
+                ", appkey='" + appkey + '\'' +
+                ", channel=" + channel +
+                ", openid='" + openid + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", deviceid='" + deviceid + '\'' +
+                ", createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                '}';
     }
 }
