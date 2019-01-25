@@ -6,7 +6,6 @@ import com.org.account.services.impl.UserServiceImpl;
 import com.org.account.util.MD5Utils;
 import com.org.account.util.Result;
 import com.org.account.util.ResultUtil;
-import com.org.account.util.Validator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,9 +37,10 @@ public class AccountControl {
             return ResultUtil.error(-1, -1, bindingResult.getFieldError().getDefaultMessage());
         }
         //检测手机号是否为空  //检测手机是否注册
-        List<Accounts> isAccountExist = accountService.accountList(accounts);
+        List<Accounts> isAccountExist = accountService.getByPhoneAndChannel(accounts.getAppkey(), accounts.getChannel(), accounts.getPhone());
         System.out.print(isAccountExist);
-        if (isAccountExist == null && isAccountExist.size() == 0) {
+        //检测手机是否注册
+        if (isAccountExist != null && isAccountExist.size() != 0) {
             return ResultUtil.error(-1, 208, "手机号已注册");
         } else {
             //生成openid
@@ -53,16 +53,9 @@ public class AccountControl {
         }
     }
 
-    @RequestMapping(value = "/phone", params = {"application/json;charset=UTF-8"})
-    public Result login(@Validated Accounts accounts, BindingResult bindingResult) {
-
-        return ResultUtil.success();
-    }
 
     /**
      * 生成accountID方法
-     *
-     * @return
      */
     public static String getUUID32() {
         String uuid = UUID.randomUUID().toString().replace("-", "").toLowerCase();

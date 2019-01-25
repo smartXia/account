@@ -18,8 +18,15 @@ public class AccountImpl implements AccountService {
     public List<Accounts> accountList(Accounts accounts) {
         //传过来的是account对象包含值
         AccountsExample example = new AccountsExample();
-        System.out.print(example);
 
+
+        return accountsMapper.selectByExample(example);
+    }
+
+    @Override
+    public List<Accounts> getByPhoneAndChannel(String appkey, int channel, String phone) {
+        AccountsExample example = new AccountsExample();
+        example.or().andChannelEqualTo(channel).andPhoneEqualTo(phone).andAppkeyEqualTo(appkey);
         return accountsMapper.selectByExample(example);
     }
 

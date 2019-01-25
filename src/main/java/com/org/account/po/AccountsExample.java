@@ -9,6 +9,15 @@ public class AccountsExample {
 
     protected boolean distinct;
 
+    @Override
+    public String toString() {
+        return "AccountsExample{" +
+                "orderByClause='" + orderByClause + '\'' +
+                ", distinct=" + distinct +
+                ", oredCriteria=" + oredCriteria +
+                '}';
+    }
+
     protected List<Criteria> oredCriteria;
 
     public AccountsExample() {

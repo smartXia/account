@@ -18,5 +18,7 @@ public interface AccountService {
     //account用户列表
     List<Accounts> accountList(Accounts accounts);
 
+    //登录使用的phone +channel查询
 
- }
+    List<Accounts> getByPhoneAndChannel(String appkey, int channel, String phone);
+}
